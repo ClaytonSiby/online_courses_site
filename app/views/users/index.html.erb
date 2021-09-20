@@ -1,0 +1,6 @@
+<% if current_user.superadmin_role? || current_user.supervisor_role? %>
+  <% @users.each do |user| %>
+    <%= user.username %>
+    <%= user.email %>
+  <% end %>
+<% end %>
