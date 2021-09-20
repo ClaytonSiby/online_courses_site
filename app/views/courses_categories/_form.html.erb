@@ -1,0 +1,17 @@
+<%= form_with(model: courses_category) do |form| %>
+  <% if courses_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(courses_category.errors.count, "error") %> prohibited this courses_category from being saved:</h2>
+
+      <ul>
+        <% courses_category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
