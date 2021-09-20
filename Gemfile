@@ -30,6 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 
+# cancancan
+gem 'cancancan', '~> 3.3'
+
 # devise gem
 gem 'devise', '~> 4.8'
 
