@@ -13,6 +13,14 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+        <% flash.each do |notification| %>
+          <% type = nofication[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+          toastr['<%= type %>']('<%= notification[1] %>');
+        <% end %>
+      </script>
+    <% end %>
     <%= yield %>
   </body>
 </html>
