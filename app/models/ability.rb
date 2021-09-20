@@ -1,17 +1,17 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
+    user ||= User.new # guest user (not logged in)
+    if user.superadmin_role?
+      can :manage, :all
+      can :access, :rails_admin # only admin users can access the Rails Admin
+      can :manage, :dashboard
+    end
+
+    can :manage, User if user.supervisor_role?
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
