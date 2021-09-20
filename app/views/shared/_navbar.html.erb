@@ -12,5 +12,18 @@
     <li class="nav-item">
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </li>
-  </ul>
+    <% if current_user.nil? %>
+      <li class="nav-item">
+        <%= link_to new_user_session_path, class: 'nav-link' do %>Sign in<% end %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to root_path, class: 'nav-link' do %>Go to App<% end %>
+      </li>
+      <li class="nav-item">
+        <%= button_to "logout", destroy_user_session_path, method: :delete, class: "nav-link", title: 'Click to SignOut' %>
+      </li>
+    <% end %>
+  </li>
+</ul>
 </div>
