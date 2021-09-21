@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <%= @category.name %>
+  </p>
+  <p>
+    <%= link_to 'Edit', edit_category_path(@category) %> |
+    <%= link_to 'Back', categories_path %>
+  </p>
+</div>
