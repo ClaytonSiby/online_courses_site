@@ -98,6 +98,7 @@ GEM
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
+    hirb (0.7.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -276,6 +277,7 @@ DEPENDENCIES
   cancancan (~> 3.3)
   capybara (>= 3.26)
   devise (~> 4.8)
+  hirb
   jbuilder (~> 2.7)
   pg (~> 1.1)
   puma (~> 5.0)
