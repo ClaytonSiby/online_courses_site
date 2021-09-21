@@ -7,7 +7,7 @@
       </button>
     </div>
     <!-- Navbar links -->
-    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
       <ul class="navbar-nav justify-content-center">
         <li class="nav-item">
           <a class="nav-link" href="#">Home</a>
@@ -18,7 +18,15 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact Us</a>
         </li>
+        <% if current_user.nil? %>
+          <li class="nav-item">
+            <button type="button" class="btn btn-sm btn-default border mx-3">
+              <%= link_to 'Get Started', new_user_session_path, class: 'nav-link' %>
+            </button>
+          </li>
+        <% end %>
       </ul>
+      <span class="mx-4">|</span>
       <ul class="navbar-nav justify-content-end">
         <% if current_user.nil? %>
           <li class="nav-item">
