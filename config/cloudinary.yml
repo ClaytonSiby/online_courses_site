@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: lifestyle-articles
+  api_key: '316783886269434'
+  api_secret: SgvOYEbiMofnimfJK806xZ_yHHo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: lifestyle-articles
+  api_key: '316783886269434'
+  api_secret: SgvOYEbiMofnimfJK806xZ_yHHo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: lifestyle-articles
+  api_key: '316783886269434'
+  api_secret: SgvOYEbiMofnimfJK806xZ_yHHo
+  enhance_image_tag: true
+  static_file_support: false
