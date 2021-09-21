@@ -9,6 +9,26 @@
         <% end %>
       </ul>
     </div>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label 'Category' %>
+      <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: 'form-control-file w-100 vh-60' %>
+    </div>
   <% end %>
 
   <div class="actions">
