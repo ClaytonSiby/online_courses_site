@@ -36,12 +36,12 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
       # Initialize first account:
-      User.create! do |u|
-        u.username = 'Clayton'
-        u.lastname = 'Siby'
-        u.age = 22
-        u.password = '@passes123'
-      end
+      # User.create! do |u|
+      #   u.username = 'Clayton'
+      #   u.lastname = 'Siby'
+      #   u.age = 22
+      #   u.password = '@passes123'
+      # end
     end
 
     add_index :users, :email,                unique: true
