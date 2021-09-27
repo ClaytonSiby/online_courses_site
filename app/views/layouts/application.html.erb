@@ -9,8 +9,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <div class='container-fluid p-0'>
+      <%= render 'shared/navbar' %>
       <% unless flash.empty? %>
         <script type="text/javascript">
           <% flash.each do |notification| %>
@@ -20,6 +20,7 @@
         </script>
       <% end %>
       <%= yield %>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>
