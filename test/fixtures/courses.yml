@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  image: MyString
   description: MyText
+  image: MyString
   pricing: 9.99
 
 two:
   title: MyString
-  image: MyString
   description: MyText
+  image: MyString
   pricing: 9.99

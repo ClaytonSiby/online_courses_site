@@ -1,18 +1,16 @@
-<div class="container">
-  <div class="card">
-    <% if @course.image.attached? %>
-      <%= cl_image_tag(@course.image.key, width: 200, crop: :scale) %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @course.title %></h5>
-      <p class="card-text">
-        <%= @course.description %>
-        <span>
-          <%= @course.pricing %>
-        </span>
-      </p>
-    </div>
-  </div>
-  <%= link_to 'Edit', edit_course_path(@course) %> |
-  <%= link_to 'Back', courses_path %>
-</div>
+<%= cl_image_tag(@course.image.full_public_id, :format => "jpg", :width => 100, :height => 200) %>
+<div style="background-image: url(<%= @course.image %>), width: 100px, height: 200px"></div>
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+<p>
+  <strong>Pricing:</strong>
+  <%= @course.pricing %>
+</p>
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
