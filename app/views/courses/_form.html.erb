@@ -9,23 +9,23 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group">
+  <div class="form-group my-2">
     <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.text_field :title, class: 'form-control my-1' %>
   </div>
-  <div class="form-group">
+  <div class="form-group my-2">
     <%= form.label :description %>
-    <%= form.text_area :description, class: 'form-control' %>
+    <%= form.text_area :description, class: 'form-control my-1' %>
   </div>
-  <div class="form-group">
-    <%= form.label 'Category' %>
-    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
-  </div>
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image, class: 'form-control-file w-100 vh-60', direct_upload: true %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="form-group my-2">
+    <%= form.label 'Category' %></br>
+  <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+</div>
+<div class="form-group my-2">
+  <%= form.label :image %>
+  <%= form.file_field :image, class: 'form-control-file w-100 vh-60 my-1', direct_upload: true %>
+</div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>

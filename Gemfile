@@ -39,6 +39,9 @@ gem 'devise', '~> 4.8'
 # hirb
 gem 'hirb'
 
+# carrierwave
+gem 'carrierwave'
+
 # cloudinary gem
 gem 'cloudinary'
 
