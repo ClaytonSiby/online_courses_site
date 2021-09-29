@@ -1,39 +1,35 @@
-<div class="form-container">
-  <div class="form-wrapper">
-    <%= form_with(model: course) do |form| %>
-      <% if course.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
-          <ul>
-            <% course.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="form-group">
-        <%= form.label :title %>
-        <%= form.text_field :title, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= form.label :description %>
-        <%= form.text_area :description, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= form.label :image %>
-        <%= form.file_field :image, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= form.label :pricing %>
-        <%= form.number_field :pricing, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= form.label 'Category' %>
-        <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
-      </div>
-      <div class="actions">
-        <%= form.submit %>
-      </div>
-    <% end %>
+<%= form_with(model: course) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
-</div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :pricing %>
+    <%= form.number_field :pricing, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label 'Category' %>
+    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
