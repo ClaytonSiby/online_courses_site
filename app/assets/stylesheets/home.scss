@@ -19,6 +19,8 @@
 
   .carousel-caption {
     z-index: 1000;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -26,6 +28,6 @@ footer {
   color: #646466;
 
   p {
-    font-size: .95rem;
+    font-size: 0.95rem;
   }
 }

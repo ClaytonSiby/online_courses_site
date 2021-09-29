@@ -1,10 +1,16 @@
 <nav
-  class="navbar navbar-expand-md bg-light navbar-light border-bottom p-3">
-    <div>
-      <a class="navbar-brand" href="/">CourseIt</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#courseItNavBar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  class="navbar navbar-expand-md navbar-light border-bottom p-3">
+    <div class="logo-container d-flex justify-content-between">
+      <div class="logo-wrapper">
+        <a class="navbar-brand py-1" href="/">
+          <%= image_tag('logo.png', class: 'align-middle logo') %>
+        </a>
+      </div>
+      <div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#courseItNavBar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </div>
     <!-- Navbar links -->
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
