@@ -1,20 +1,13 @@
-<nav
-  class="navbar navbar-expand-md navbar-light border-bottom p-3">
-    <div class="logo-container d-flex justify-content-between">
-      <div class="logo-wrapper">
-        <a class="navbar-brand py-1" href="/">
-          <%= image_tag('logo.png', class: 'align-middle logo') %>
-        </a>
-      </div>
-      <div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#courseItNavBar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </div>
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-      <ul class="navbar-nav justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container">
+    <a class="navbar-brand py-1" href="/">
+      <%= image_tag('logo.png', class: 'align-middle logo') %>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
@@ -34,22 +27,22 @@
             </button>
           </li>
         <% end %>
-      </ul>
-      <span class="mx-4">|</span>
-      <ul class="navbar-nav justify-content-end">
-        <% if current_user.nil? %>
-          <li class="nav-item">
-            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= button_to 'SignOut', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        <% if current_user %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <%= link_to current_user.username, edit_user_registration_path, class: "dropdown-item", title: 'Click to edit profile' %>
+              </li>
+              <li>
+                <%= button_to 'SignOut', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+              </li>
+            </ul>
           </li>
         <% end %>
       </ul>
     </div>
+  </div>
 </nav>
